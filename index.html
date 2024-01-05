@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>my page</title>
+</head>
+
+<body>
+    <h1>Current time</h1>
+    <p id="para"></p>
+</body>
+<script>
+    var p = document.getElementById("para");
+
+    // clock();
+
+    setInterval(clock, 1000);
+    function clock() {
+
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var o = d.getSeconds();
+        var x = "AM";
+        if (h >= 12) {
+            x = "PM"
+            h -= 12;
+        }
+        if (h >= 0 && h <= 9) {
+            h = "0" + h;
+        }
+        if (m >= 0 && m <= 9) {
+            m = "0" + m;
+        }
+        if (s >= 0 && s <= 9) {
+            s = "0" + s;
+        }
+
+        p.innerHTML = h + ":" + m + ":" + o + ":" + x;
+    }
+</script>
+
+</html>
